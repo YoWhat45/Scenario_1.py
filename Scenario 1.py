@@ -10,7 +10,6 @@ travel_df.tail()
 travel_df.shape
 
 print(travel_df)
-
 #Choosing other region
 other_region_df = travel_df[['USA', 'Canada', 'Australia', 'New Zealand', 'Africa']]
 
@@ -30,12 +29,20 @@ Australia = plot_graph['Australia']
 NewZealand = plot_graph['New Zealand']
 Africa = plot_graph['Africa']
 
-plt.figure(facecolor = 'white', figsize = (8, 4))
 plt.plot(USA)
 plt.plot(Canada)
 plt.plot(Australia)
 plt.plot(NewZealand)
 plt.plot(Africa)
+
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+plt.title('Other regions in years 2008 - 2017')
+plt.xlabel('Month')
+plt.ylabel('Country')
+plt.legend(fontsize = 10)
+plt.xticks(rotation = 90)
+plt.margins(x=0, y=0)
 
 plt.show()
 #Test Class
