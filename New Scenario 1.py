@@ -65,7 +65,7 @@ plt.ticklabel_format(style='plain', axis='y')
 addlabels(country_names, country_sum)
 plt.title('Amount of Visitors from 2008 - 2017', size = 18)
 plt.xlabel("Country Name", size = 14)
-plt.ylabel("No. of Visitors", size = 14)
+plt.ylabel("No. of Visitors", rotation = 0, size = 14)
 
 plt.show()
 
