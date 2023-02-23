@@ -72,3 +72,16 @@ plt.show()
 #Top 3 Countries
 top_3_df = sum_travel_df
 print(top_3_df.nlargest(3))
+
+#Test Class
+class TestStringMethods(unittest.TestCase):
+
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+if __name__ == '__main__':
+    unittest.main()
