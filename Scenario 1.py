@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import unittest
+import math
 
 travel_df = pd.read_excel('./Project_File.xlsx', index_col=0)
 travel_df.columns = travel_df.columns.str.strip()
@@ -48,9 +49,9 @@ plt.margins(x=0, y=0)
 plt.show()
 
 #Top 3 countries in the region over a span of 10 years.
-top_3_countries_df = years_other_region_df
+#top_countries_df = years_other_region_df
 
-
+#top_countries_df['Sum'] = top_countries_df['USA'] + top_countries_df['Canada'] + top_countries_df['Australia']
 #Test Class
 class TestStringMethods(unittest.TestCase):
 
