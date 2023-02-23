@@ -49,9 +49,21 @@ plt.margins(x=0, y=0)
 plt.show()
 
 #Top 3 countries in the region over a span of 10 years.
-#top_countries_df = years_other_region_df
+top_countries_df = years_other_region_df
 
-#top_countries_df['Sum'] = top_countries_df['USA'] + top_countries_df['Canada'] + top_countries_df['Australia']
+top_USA = top_countries_df['USA'].sum()
+top_Canada = top_countries_df['Canada'].sum()
+top_Australia = top_countries_df['Australia'].sum()
+top_NewZealand = top_countries_df['New Zealand'].sum()
+top_Africa = top_countries_df['Africa'].sum()
+
+print("Sum of USA is", top_USA)
+print("Sum of Canada is", top_Canada)
+print("Sum of Australia is", top_Australia)
+print("Sum of New Zealand is", top_NewZealand)
+print("Sum of Africa is", top_Africa)
+
+print('Top 3 countries are Australia, USA and New Zealand')
 #Test Class
 class TestStringMethods(unittest.TestCase):
 
