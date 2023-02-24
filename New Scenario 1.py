@@ -59,7 +59,7 @@ def addlabels(country_names,country_sum):
     for i in range(len(country_names)):
         plt.text(i,country_sum[i], country_sum[i])
 
-plt.bar(x = country_names, height = country_sum)
+plt.bar(x =country_names, height =country_sum, color = "black")
 
 plt.ticklabel_format(style='plain', axis='y')
 addlabels(country_names, country_sum)
