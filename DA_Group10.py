@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import unittest
 
 travel_df = pd.read_excel('./Project_File.xlsx')
 travel_df.head()
@@ -45,25 +44,11 @@ sum_travel_df = sum_travel_df.sum()
 print(sum_travel_df)
 
 #Plot Graph
-plot_graph = {"USA": 4606203,
-           "Canada": 870949,
-           "Australia": 9798279,
-           "New Zealand": 1155381,
-           "Africa": 721871
-          }
+plot_graph = sum_travel_df.sort_values()
 
-country_names = list(plot_graph.keys())
-country_sum = list(plot_graph.values())
-
-def addlabels(country_names,country_sum):
-    for i in range(len(country_names)):
-        plt.text(i,country_sum[i], country_sum[i])
-
-plt.bar(x =country_names, height =country_sum, color = "black")
-
+ax = plot_graph.plot(kind = 'bar', title = 'Amount of Visitors from 2008 - 2017', color = 'black')
 plt.ticklabel_format(style='plain', axis='y')
-addlabels(country_names, country_sum)
-plt.title('Amount of Visitors from 2008 - 2017', size = 18)
+plt.xticks(rotation = 0)
 plt.xlabel("Country Name", size = 14)
 plt.ylabel("No. of Visitors", rotation = 0, size = 14)
 
@@ -72,17 +57,3 @@ plt.show()
 #Top 3 Countries
 top_3_df = sum_travel_df
 print(top_3_df.nlargest(3))
-
-#Test Class
-class TestStringMethods(unittest.TestCase):
-
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
-
-    def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
-        self.assertFalse('Foo'.isupper())
-
-if __name__ == '__main__':
-    unittest.main()
-
